@@ -1,0 +1,28 @@
+<header>
+  <div class="header-item">
+    <span>0</span>
+  </div>
+  <div class="header-item">
+    <a class="shopping-cart-link" routerLink="/shopping-cart">Shopping Cart</a>
+  </div>
+  <div *ngIf="authService.user$ | async as user; else anonymousUser" class="header-item">
+    <div class="user-menu" [matMenuTriggerFor]="userMenu">
+      <span>{{ user.displayName }}</span>
+      <mat-icon>account_box</mat-icon>
+    </div>
+    <mat-menu class="user-menu-content" #userMenu="matMenu">
+      <ng-template matMenuContent>
+        <button mat-menu-item>My Orders</button>
+        <button mat-menu-item>Manage Orders</button>
+        <button mat-menu-item>Manage Products</button>
+        <button mat-menu-item (click)="logout()">Log Out</button>
+      </ng-template>
+    </mat-menu>
+  </div>
+  <ng-template #anonymousUser>
+    <div class="header-item">
+      <a routerLink="login">Login</a>
+    </div>
+  </ng-template>
+
+</header>

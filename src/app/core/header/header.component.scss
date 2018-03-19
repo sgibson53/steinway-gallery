@@ -1,0 +1,22 @@
+header {
+    display: flex;
+
+    .header-item {
+        display: block;
+        margin: 0 10px;
+        height: 34px;
+        line-height: 34px;
+        font-size: 20px;
+    }
+
+    .user-menu {
+        cursor: pointer;
+        
+        .mat-icon {
+            position: relative;
+            top: 5px;
+            margin-left: 5px;
+        }
+    }
+}
+
