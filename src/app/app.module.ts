@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
+import { SimpleNotificationsModule } from 'angular2-notifications';
 import { AppRoutingModule } from './app-routing.module';
 
 // Firebase
@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material';
 
 // My Modules
 import { CoreModule } from './core/core.module';
+import { AdminModule } from './admin/admin.module';
 
 // My Components
 import { AppComponent } from './app.component';
@@ -25,6 +26,9 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 import { UserService } from './user.service';
 import { AdminAuthGuard } from './admin-auth-guard.service';
+
+// My Services
+import { ProductsService } from './shared/services/products.service';
 
 
 @NgModule({
@@ -38,11 +42,13 @@ import { AdminAuthGuard } from './admin-auth-guard.service';
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    SimpleNotificationsModule.forRoot(),
     CoreModule,
+    AdminModule,
     MatButtonModule,
     AppRoutingModule
   ],
-  providers: [AngularFireAuth, AngularFireDatabase, AuthService, AuthGuard, UserService, AdminAuthGuard],
+  providers: [AngularFireAuth, AngularFireDatabase, AuthService, AuthGuard, UserService, AdminAuthGuard, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

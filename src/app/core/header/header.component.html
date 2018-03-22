@@ -14,7 +14,7 @@
       <ng-template matMenuContent>
         <button mat-menu-item>My Orders</button>
         <button *ngIf="appUser.isAdmin" mat-menu-item>Manage Orders</button>
-        <button *ngIf="appUser.isAdmin" mat-menu-item>Manage Products</button>
+        <button *ngIf="appUser.isAdmin" mat-menu-item [routerLink]="['/admin']">Manage Products</button>
         <button mat-menu-item (click)="logout()">Log Out</button>
       </ng-template>
     </mat-menu>

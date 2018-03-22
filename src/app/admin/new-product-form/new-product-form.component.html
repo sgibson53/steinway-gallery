@@ -1,0 +1,63 @@
+<h1>Please Enter Product Information</h1>
+<div class="form-wrapper">
+  <form (ngSubmit)="onSubmitForm()" #newProductForm="ngForm">
+    <mat-form-field>
+      <input 
+      matInput
+      placeholder="Model"
+      type="text"
+      id="model"
+      required
+      name="label"
+      #label="ngModel"
+      [(ngModel)]="formLabel">
+    </mat-form-field>
+    <mat-form-field>
+      <input 
+      matInput
+      placeholder="Sub Label"
+      type="text"
+      id="subLabel"
+      required
+      name="subLabel"
+      #subLabel="ngModel"
+      [(ngModel)]="formSubLabel">
+    </mat-form-field>
+    <mat-form-field>
+      <input 
+      matInput
+      placeholder="Price (USD)"
+      type="text"
+      id="price"
+      required
+      name="price"
+      #price="ngModel"
+      [(ngModel)]="formPrice">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea 
+        matInput
+        placeholder="Description"
+        matTextareaAutosize
+        matAutosizeMinRows="5"
+        id="description"
+        required
+        name="description"
+        #description="ngModel"
+        [(ngModel)]="formDescription"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input 
+      matInput
+      placeholder="Image URL"
+      type="text"
+      id="url"
+      required
+      name="url"
+      #url="ngModel"
+      [(ngModel)]="formUrl">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!newProductForm.form.valid">Submit</button>
+  </form>
+</div>
+{{ diagnostic }}
