@@ -1,16 +1,27 @@
 <h1>Please Enter Product Information</h1>
 <div class="form-wrapper">
-  <form (ngSubmit)="onSubmitForm()" #newProductForm="ngForm">
+  <form (ngSubmit)="onSubmitForm(); newProductForm.resetForm()" #newProductForm="ngForm">
+    <mat-form-field>
+        <input 
+        matInput
+        placeholder="Model"
+        type="text"
+        id="model"
+        required
+        name="model"
+        #label="ngModel"
+        [(ngModel)]="newProduct.model">
+    </mat-form-field>
     <mat-form-field>
       <input 
       matInput
-      placeholder="Model"
+      placeholder="Label"
       type="text"
-      id="model"
+      id="label"
       required
       name="label"
       #label="ngModel"
-      [(ngModel)]="formLabel">
+      [(ngModel)]="newProduct.label">
     </mat-form-field>
     <mat-form-field>
       <input 
@@ -21,7 +32,7 @@
       required
       name="subLabel"
       #subLabel="ngModel"
-      [(ngModel)]="formSubLabel">
+      [(ngModel)]="newProduct.subLabel">
     </mat-form-field>
     <mat-form-field>
       <input 
@@ -32,7 +43,7 @@
       required
       name="price"
       #price="ngModel"
-      [(ngModel)]="formPrice">
+      [(ngModel)]="newProduct.price">
     </mat-form-field>
     <mat-form-field>
       <textarea 
@@ -44,7 +55,7 @@
         required
         name="description"
         #description="ngModel"
-        [(ngModel)]="formDescription"></textarea>
+        [(ngModel)]="newProduct.description"></textarea>
     </mat-form-field>
     <mat-form-field>
       <input 
@@ -55,9 +66,9 @@
       required
       name="url"
       #url="ngModel"
-      [(ngModel)]="formUrl">
+      [(ngModel)]="newProduct.imageURL">
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit" [disabled]="!newProductForm.form.valid">Submit</button>
+    <button mat-raised-button color="primary" [routerLink]="['../']">Cancel</button>
   </form>
 </div>
-{{ diagnostic }}
