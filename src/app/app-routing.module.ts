@@ -4,7 +4,6 @@ import { HomeComponent } from './home/home.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth-guard.service';
-import { ProductsComponent } from './admin/products/products.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
