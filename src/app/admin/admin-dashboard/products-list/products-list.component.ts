@@ -48,7 +48,7 @@ export class ProductsListComponent implements OnInit {
   }
 
   public onEditClicked(productId) {
-    this.router.navigate(['/edit', productId]);
+    this.router.navigate(['/admin/edit', productId]);
   }
 
   public openDeleteDialog(id) {

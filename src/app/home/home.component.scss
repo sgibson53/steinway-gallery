@@ -1,0 +1,43 @@
+.page-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+    .category-wrapper {
+        display: inline-block;
+        position: fixed;
+        width: 300px;
+        height: 100vh;
+        background: lavender;
+
+        .category-selector ul {
+            width: 90%;
+            margin: 20px auto;
+            height: 40px;
+            line-height: 40px;
+            font-size: 1.5em;
+            background: whitesmoke;
+            display: table;
+            border-radius: 5px;
+
+            li {
+                display: table-row;
+                border-top: 1px solid black;
+
+                &:hover {
+                    background: red;
+                }
+
+            }
+
+            li:first-of-type {
+                border-radius: 5px 5px 0 0;
+            }
+
+            li:last-of-type {
+                border-radius: 0 0 5px 5px;
+                border-radius: 30px;
+            }
+        }
+    }
+}

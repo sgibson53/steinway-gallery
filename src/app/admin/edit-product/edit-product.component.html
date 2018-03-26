@@ -69,7 +69,7 @@
           <mat-card-subtitle>{{product.subLabel}}</mat-card-subtitle>
           <mat-card-content>
             <div class="description">{{product.description}}</div>
-            <div class="price">${{product.price}}</div>
+            <div class="price">{{product.price | currency:'USD'}}</div>
           </mat-card-content>
         </mat-card>
   </div>

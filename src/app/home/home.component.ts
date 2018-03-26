@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BRANDS } from '../shared/constants/brands.constants';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  public brands;
+
   constructor() { }
 
   ngOnInit() {
+    this.brands = Object.values(BRANDS);
   }
 
 }
