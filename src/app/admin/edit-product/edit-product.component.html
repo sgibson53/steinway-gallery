@@ -1,0 +1,76 @@
+<div class="page-wrapper" *ngIf="product">
+  <form (ngSubmit)="onSubmitForm()" #editProductForm="ngForm">
+      <mat-form-field>
+          <mat-select required placeholder="Brand" [(value)]="product.brand">
+            <mat-option *ngFor="let brand of brands" [value]="brand">
+              {{ brand }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <input 
+          matInput
+          placeholder="Label"
+          type="text"
+          id="label"
+          name="label"
+          #label="ngModel"
+          [(ngModel)]="product.label">
+        </mat-form-field>
+        <mat-form-field>
+          <input 
+          matInput
+          placeholder="Sub Label"
+          type="text"
+          id="subLabel"
+          name="subLabel"
+          #subLabel="ngModel"
+          [(ngModel)]="product.subLabel">
+        </mat-form-field>
+        <mat-form-field>
+          <input 
+          matInput
+          placeholder="Price (USD)"
+          type="text"
+          id="price"
+          name="price"
+          #price="ngModel"
+          [(ngModel)]="product.price">
+        </mat-form-field>
+        <mat-form-field>
+          <textarea 
+            matInput
+            placeholder="Description"
+            matTextareaAutosize
+            matAutosizeMinRows="5"
+            id="description"
+            name="description"
+            #description="ngModel"
+            [(ngModel)]="product.description"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <input 
+          matInput
+          placeholder="Image URL"
+          type="text"
+          id="url"
+          name="url"
+          #url="ngModel"
+          [(ngModel)]="product.imageURL">
+        </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Save</button>
+      <button mat-raised-button color="danger" [routerLink]="['../../']">Close</button>
+  </form>
+  
+  <div class="product-detail">
+      <mat-card>
+          <img mat-card-image id="product-image" [src]="product.imageURL" width="400">
+          <mat-card-title>{{product.label}}</mat-card-title>
+          <mat-card-subtitle>{{product.subLabel}}</mat-card-subtitle>
+          <mat-card-content>
+            <div class="description">{{product.description}}</div>
+            <div class="price">${{product.price}}</div>
+          </mat-card-content>
+        </mat-card>
+  </div>
+</div>

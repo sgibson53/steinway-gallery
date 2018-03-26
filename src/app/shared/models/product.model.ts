@@ -1,6 +1,6 @@
 export interface Product {
     dbid?: string;
-    model: string;
+    brand: string;
     label: string;
     subLabel: string;
     price: number;

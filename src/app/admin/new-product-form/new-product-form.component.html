@@ -2,15 +2,11 @@
 <div class="form-wrapper">
   <form (ngSubmit)="onSubmitForm(); newProductForm.resetForm()" #newProductForm="ngForm">
     <mat-form-field>
-        <input 
-        matInput
-        placeholder="Model"
-        type="text"
-        id="model"
-        required
-        name="model"
-        #label="ngModel"
-        [(ngModel)]="newProduct.model">
+      <mat-select required placeholder="Brand" [(value)]="newProduct.brand">
+        <mat-option *ngFor="let brand of brands" [value]="brand">
+          {{ brand }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
     <mat-form-field>
       <input 

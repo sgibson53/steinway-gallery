@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .message {
+        font-size: 1.8em;
+        padding: 15px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+}

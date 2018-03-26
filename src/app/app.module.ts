@@ -15,7 +15,6 @@ import { MatButtonModule } from '@angular/material';
 
 // My Modules
 import { CoreModule } from './core/core.module';
-import { AdminModule } from './admin/admin.module';
 
 // My Components
 import { AppComponent } from './app.component';
@@ -29,14 +28,15 @@ import { AdminAuthGuard } from './admin-auth-guard.service';
 
 // My Services
 import { ProductsService } from './shared/services/products.service';
-
+import { DeleteDialogComponent } from './shared/components/delete-dialog/delete-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ShoppingCartComponent,
-    LoginComponent
+    LoginComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -44,10 +44,10 @@ import { ProductsService } from './shared/services/products.service';
     AngularFireModule.initializeApp(environment.firebase),
     SimpleNotificationsModule.forRoot(),
     CoreModule,
-    AdminModule,
     MatButtonModule,
     AppRoutingModule
   ],
+  entryComponents: [DeleteDialogComponent],
   providers: [AngularFireAuth, AngularFireDatabase, AuthService, AuthGuard, UserService, AdminAuthGuard, ProductsService],
   bootstrap: [AppComponent]
 })
