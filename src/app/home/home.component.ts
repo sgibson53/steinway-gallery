@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BRANDS } from '../shared/constants/brands.constants';
+import { ProductsService } from '../shared/services/products.service';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,21 @@ import { BRANDS } from '../shared/constants/brands.constants';
 export class HomeComponent implements OnInit {
 
   public brands;
-  public selectedCategory = "All Brands";
+  public products;
+  public selectedCategory = 'All Brands';
 
-  constructor() { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
     this.brands = Object.values(BRANDS);
+    this.productsService.getAllProducts().subscribe(products => {
+      this.products = [];
+      for (const prop in products) {
+        if (prop) {
+          this.products.push({...products[prop], dbid: prop});
+        }
+      }
+    });
   }
 
   public changeCategory(newCategory) {

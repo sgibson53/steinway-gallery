@@ -1,0 +1,36 @@
+
+.catalog-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 900px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 0;
+
+  mat-card {
+    max-width: 400px;
+    margin: 20px 0;
+    color: rgb(56, 56, 56);
+  
+    #product-image {
+        width: 400px;
+    }
+  
+    .price {
+        margin-top: 5px;
+        font-size: 1.2em;
+    }
+
+    mat-card-footer {
+      font-size: 1.2em;
+      width: 150px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 10px;
+      margin: auto;
+      text-align: center;
+      background: rgb(204, 225, 233);
+      cursor: pointer;
+    }
+  }
+}

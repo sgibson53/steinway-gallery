@@ -15,7 +15,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 // Angular Material
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatCardModule } from '@angular/material';
 
 // My Modules
 import { CoreModule } from './core/core.module';
@@ -33,6 +33,7 @@ import { AdminAuthGuard } from './admin-auth-guard.service';
 // My Services
 import { ProductsService } from './shared/services/products.service';
 import { DeleteDialogComponent } from './shared/components/delete-dialog/delete-dialog.component';
+import { CatalogComponent } from './home/catalog/catalog.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { DeleteDialogComponent } from './shared/components/delete-dialog/delete-
     ShoppingCartComponent,
     LoginComponent,
     DeleteDialogComponent,
+    CatalogComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +51,7 @@ import { DeleteDialogComponent } from './shared/components/delete-dialog/delete-
     SimpleNotificationsModule.forRoot(),
     CoreModule,
     MatButtonModule,
+    MatCardModule,
     AngularSvgIconModule,
     HttpClientModule,
     AppRoutingModule

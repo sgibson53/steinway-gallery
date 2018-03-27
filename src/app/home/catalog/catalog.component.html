@@ -1,0 +1,11 @@
+<ul class='catalog-wrapper'>
+  <mat-card *ngFor="let product of filteredProducts">
+    <img mat-card-image [src]="product.imageURL">
+    <mat-card-title>{{product.brand}} - {{product.label}}</mat-card-title>
+    <mat-card-subtitle>{{product.subLabel}}</mat-card-subtitle>
+    <mat-card-content>{{product.price | currency:'USD'}}</mat-card-content>
+    <mat-card-footer>
+      Add to Cart
+    </mat-card-footer>
+  </mat-card>
+</ul>
