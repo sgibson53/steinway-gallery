@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { SimpleNotificationsModule } from 'angular2-notifications';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
+// 3rd Party Modules
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 // Firebase
 import { environment } from '../environments/environment';
@@ -36,7 +40,7 @@ import { DeleteDialogComponent } from './shared/components/delete-dialog/delete-
     HomeComponent,
     ShoppingCartComponent,
     LoginComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,8 @@ import { DeleteDialogComponent } from './shared/components/delete-dialog/delete-
     SimpleNotificationsModule.forRoot(),
     CoreModule,
     MatButtonModule,
+    AngularSvgIconModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   entryComponents: [DeleteDialogComponent],

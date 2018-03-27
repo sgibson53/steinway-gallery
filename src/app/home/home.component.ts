@@ -9,11 +9,16 @@ import { BRANDS } from '../shared/constants/brands.constants';
 export class HomeComponent implements OnInit {
 
   public brands;
+  public selectedCategory = "All Brands";
 
   constructor() { }
 
   ngOnInit() {
     this.brands = Object.values(BRANDS);
+  }
+
+  public changeCategory(newCategory) {
+    this.selectedCategory = newCategory;
   }
 
 }

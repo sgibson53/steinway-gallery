@@ -3,8 +3,6 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase';
 import { Observable } from 'rxjs/Observable';
 
-import { AppUser } from './models/app-user';
-
 @Injectable()
 export class UserService {
 

@@ -2,8 +2,14 @@
   <div class="category-wrapper">
     <div class="category-selector">
       <ul>
-        <li>All Brands</li>
-        <li *ngFor="let brand of brands">{{brand}}</li>
+        <li (click)="changeCategory('All Brands')">
+          <span>All Brands</span>
+          <svg-icon *ngIf="selectedCategory === 'All Brands'" src="assets/svg/checkmark.svg"></svg-icon>
+        </li>
+        <li *ngFor="let brand of brands" (click)="changeCategory(brand)">
+          <span>{{brand}}</span>
+          <svg-icon *ngIf="selectedCategory === brand" src="assets/svg/checkmark.svg"></svg-icon>
+        </li>
       </ul>
     </div>
   </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';
-import { AppUser } from '../../models/app-user';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +8,7 @@ import { AppUser } from '../../models/app-user';
 })
 export class HeaderComponent implements OnInit {
 
-  appUser: AppUser;
+  appUser: any;
 
   constructor(public authService: AuthService) { }
 
