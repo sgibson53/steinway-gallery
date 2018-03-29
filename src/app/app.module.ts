@@ -34,6 +34,7 @@ import { AdminAuthGuard } from './admin-auth-guard.service';
 import { ProductsService } from './shared/services/products.service';
 import { DeleteDialogComponent } from './shared/components/delete-dialog/delete-dialog.component';
 import { CatalogComponent } from './home/catalog/catalog.component';
+import { ShoppingCartService } from './shared/services/shopping-cart.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { CatalogComponent } from './home/catalog/catalog.component';
     ShoppingCartComponent,
     LoginComponent,
     DeleteDialogComponent,
-    CatalogComponent,
+    CatalogComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +58,16 @@ import { CatalogComponent } from './home/catalog/catalog.component';
     AppRoutingModule
   ],
   entryComponents: [DeleteDialogComponent],
-  providers: [AngularFireAuth, AngularFireDatabase, AuthService, AuthGuard, UserService, AdminAuthGuard, ProductsService],
+  providers: [
+    AngularFireAuth,
+    AngularFireDatabase,
+    AuthService,
+    AuthGuard,
+    UserService,
+    AdminAuthGuard,
+    ProductsService,
+    ShoppingCartService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

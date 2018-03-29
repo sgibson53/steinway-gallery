@@ -4,7 +4,7 @@
     <mat-card-title>{{product.brand}} - {{product.label}}</mat-card-title>
     <mat-card-subtitle>{{product.subLabel}}</mat-card-subtitle>
     <mat-card-content>{{product.price | currency:'USD'}}</mat-card-content>
-    <mat-card-footer>
+    <mat-card-footer (click)="addToCart(product)">
       Add to Cart
     </mat-card-footer>
   </mat-card>
