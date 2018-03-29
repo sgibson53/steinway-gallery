@@ -36,6 +36,10 @@
                     border-top: none;
                 }
 
+                &:focus {
+                    outline: none;
+                }
+
                 svg-icon {
                     position: relative;
                     top: 4px;

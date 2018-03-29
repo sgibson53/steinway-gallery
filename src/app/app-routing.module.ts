@@ -6,7 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth-guard.service';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent},
   { path: 'shopping-cart', component: ShoppingCartComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule', canActivate: [AuthGuard] }

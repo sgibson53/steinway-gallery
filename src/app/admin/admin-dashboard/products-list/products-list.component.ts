@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductsService } from '../../../shared/services/products.service';
 import { NotificationsService } from 'angular2-notifications';
 import { Product } from '../../../shared/models/product.model';
@@ -7,6 +7,8 @@ import { filter } from 'rxjs/operator/filter';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { DeleteDialogComponent } from '../../../shared/components/delete-dialog/delete-dialog.component';
+import 'rxjs/add/operator/takeUntil';
+import { componentDestroyed } from 'ng2-rx-componentdestroyed';
 
 
 @Component({
@@ -14,7 +16,7 @@ import { DeleteDialogComponent } from '../../../shared/components/delete-dialog/
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.scss']
 })
-export class ProductsListComponent implements OnInit {
+export class ProductsListComponent implements OnInit, OnDestroy {
   public products: Product[];
   public displayedColumns = ['id', 'brand', 'label', 'subLabel', 'price', 'edit-delete'];
   public dataSource;
@@ -26,7 +28,7 @@ export class ProductsListComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.productsService.getAllProducts().subscribe(products => {
+    this.productsService.getAllProducts().takeUntil(componentDestroyed(this)).subscribe(products => {
       this.products = [];
       for (const prop in products) {
         if (prop) {
@@ -53,6 +55,10 @@ export class ProductsListComponent implements OnInit {
 
   public openDeleteDialog(id) {
     const dialogRef = this.dialog.open(DeleteDialogComponent, {width: '380px', data: {id: id}});
+  }
+
+  ngOnDestroy() {
+    // Necessary from ng2-rx-componentdestroyed
   }
 
 }
