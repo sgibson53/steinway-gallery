@@ -16,16 +16,13 @@ export class ShoppingCartService {
 
   async addToCart(product: Product) {
     const cartId = await this.getOrCreateCartId();
-    // const itemAF = this.db.object(`/shoping-carts/${cartId}/items/${product.dbid}`);
-    const item$ = this.db.object(`/shoping-carts/${cartId}/items/${product.dbid}`).valueChanges();
-    console.log(item$);
-    item$.take(1).subscribe(item => {
-      console.log(item);
-      // if (item.$exists()) {
-      //   item$.update({quantity: item.quantity + 1});
-      // } else {
-      //   item$.set({product: product, quantity: 1});
-      // }
+    const item$ = this.db.object(`/shopping-carts/${cartId}/items/${product.dbid}`);
+    item$.snapshotChanges().take(1).subscribe(res => {
+      if (res.key) {
+        item$.update({quantity: res.payload.val().quantity + 1});
+      } else {
+        item$.set({product: product, quantity: 1});
+      }
     });
   }
 
