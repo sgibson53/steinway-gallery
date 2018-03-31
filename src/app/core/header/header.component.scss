@@ -7,6 +7,15 @@ header {
         height: 34px;
         line-height: 34px;
         font-size: 20px;
+
+        #home-logo {
+            width: 50px;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+        }
     }
 
     .user-menu {

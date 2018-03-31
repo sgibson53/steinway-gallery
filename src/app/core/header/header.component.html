@@ -1,5 +1,8 @@
 <header>
   <div class="header-item">
+    <img routerLink="/home" id="home-logo" src="https://static.wixstatic.com/media/255d68_053f63add0ff4506bde1887d88c0b575~mv2.jpg" alt="">
+  </div>
+  <div class="header-item">
     <a class="shopping-cart-link" routerLink="/shopping-cart">Shopping Cart</a>
     <span id="items-in-cart" *ngIf="numItemsInCart">{{numItemsInCart}}</span>
   </div>
