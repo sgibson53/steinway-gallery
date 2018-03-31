@@ -18,6 +18,8 @@
 
         #product-description {
             margin: 10px 0;
+            display: flex;
+            justify-content: flex-start;
     
             #product-image {
                 width: 100px;
@@ -26,10 +28,10 @@
             }
         
             #product-label {
-                display: block;
-                width: 100px;
-                text-align: center;
-                font-size: 1.2em;
+                text-align: left;
+                font-size: 1.4em;
+                line-height: 102px;
+                margin-left: 10px;
             }
         }
 
@@ -39,6 +41,18 @@
                 height: 20px;
                 margin: 15px;
                 line-height: 20px;
+            }
+        }
+
+        .last-row {
+            height: 57px;
+            padding: 0 24px;
+            display: flex;
+            justify-content: flex-end;
+
+            div {
+                line-height: 57px;
+                font-size: 1.5em;
             }
         }
     }

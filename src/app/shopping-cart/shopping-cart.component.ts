@@ -16,6 +16,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   public cartItems: CartItem[];
   public dataSource;
   public numItemsInCart: number;
+  public totalPrice: number;
 
   constructor(private shoppingCartService: ShoppingCartService) { }
 
@@ -29,6 +30,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
       items$.takeUntil(componentDestroyed(this)).subscribe((listOfCartItems: CartItem[]) => {
         if (listOfCartItems) {
           this.numItemsInCart = listOfCartItems.reduce((acc, el) => acc + el.quantity, 0);
+          this.totalPrice = listOfCartItems.reduce((acc, el) => acc + el.quantity * el.product.price, 0);
         }
       });
     });
@@ -40,6 +42,10 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
 
   public decreaseQuantity(product: Product) {
     this.shoppingCartService.removeFromCart(product);
+  }
+
+  public emptyShoppingCart() {
+    this.shoppingCartService.emptyShoppintCart();
   }
 
   ngOnDestroy() {

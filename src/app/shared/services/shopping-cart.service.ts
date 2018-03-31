@@ -58,6 +58,13 @@ export class ShoppingCartService {
     return this.db.list(`/shopping-carts/${cartId}/items`);
   }
 
+  public emptyShoppintCart() {
+    const cartId = localStorage.getItem('cartId');
+    if (cartId) {
+      this.db.object(`/shopping-carts/${cartId}/items/`).remove();
+    }
+  }
+
   private async getOrCreateCartId() {
     const cartId = localStorage.getItem('cartId');
     if (cartId) {
@@ -68,5 +75,4 @@ export class ShoppingCartService {
     localStorage.setItem('cartId', result.key);
     return result.key;
   }
-
 }
