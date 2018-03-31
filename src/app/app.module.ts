@@ -15,7 +15,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 // Angular Material
-import { MatButtonModule, MatCardModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatTableModule } from '@angular/material';
 
 // My Modules
 import { CoreModule } from './core/core.module';
@@ -53,6 +53,7 @@ import { ShoppingCartService } from './shared/services/shopping-cart.service';
     CoreModule,
     MatButtonModule,
     MatCardModule,
+    MatTableModule,
     AngularSvgIconModule,
     HttpClientModule,
     AppRoutingModule

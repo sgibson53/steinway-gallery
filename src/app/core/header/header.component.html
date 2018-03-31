@@ -1,9 +1,7 @@
 <header>
   <div class="header-item">
-    <span>0</span>
-  </div>
-  <div class="header-item">
     <a class="shopping-cart-link" routerLink="/shopping-cart">Shopping Cart</a>
+    <span id="items-in-cart" *ngIf="numItemsInCart">{{numItemsInCart}}</span>
   </div>
   <div *ngIf="appUser; else anonymousUser" class="header-item">
     <div class="user-menu" [matMenuTriggerFor]="userMenu">

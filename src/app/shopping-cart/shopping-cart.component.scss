@@ -1,0 +1,45 @@
+.page-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+
+    #page-title {
+        font-size: 3.5em;
+        margin-top: 40px;
+    }
+
+    #amount-message {
+        margin: 10px 0;
+        font-size: 1.5em;
+    }
+
+    .shopping-cart-table-wrapper {
+        margin: 50px 0;
+
+        #product-description {
+            margin: 10px 0;
+    
+            #product-image {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+        
+            #product-label {
+                display: block;
+                width: 100px;
+                text-align: center;
+                font-size: 1.2em;
+            }
+        }
+
+        #quantity {
+            .mat-raised-button {
+                min-width: 10px;
+                height: 20px;
+                margin: 15px;
+                line-height: 20px;
+            }
+        }
+    }
+}

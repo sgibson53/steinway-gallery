@@ -1,3 +1,36 @@
-<p>
-  shopping-cart works!
-</p>
+<div class="page-wrapper">
+  <h1 id="page-title">ShoppingCart</h1>
+  <div id="amount-message">You have <span>{{numItemsInCart}}</span> items in your shopping cart.</div>
+  <div class="shopping-cart-table-wrapper mat-elevation-z8">
+    <mat-table #shoppingCartTable [dataSource]="dataSource">
+
+      <!-- Product -->
+      <ng-container matColumnDef="product">
+        <mat-header-cell *matHeaderCellDef>Product</mat-header-cell>
+          <mat-cell id="product-description" *matCellDef="let element">
+            <img id="product-image" [src]="element.product.imageURL" [alt]="element.product.model">
+            <span id="product-label">{{element.product.label}}</span>
+          </mat-cell>
+      </ng-container>
+
+      <!-- Quantity -->
+      <ng-container matColumnDef="quantity">
+          <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
+          <mat-cell id="quantity" *matCellDef="let element">
+            <button (click)="decreaseQuantity(element.product)" mat-raised-button color="primary">-</button>
+            {{element.quantity}}
+            <button (click)="increaseQuantity(element.product)" mat-raised-button color="primary">+</button>
+          </mat-cell>
+      </ng-container>
+
+      <!-- Price -->
+      <ng-container matColumnDef="price">
+          <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.product.price * element.quantity | currency:'USD'}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>

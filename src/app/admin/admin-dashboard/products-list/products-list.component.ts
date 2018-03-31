@@ -37,8 +37,6 @@ export class ProductsListComponent implements OnInit, OnDestroy {
       }
 
       this.dataSource = new MatTableDataSource(this.products);
-      // Debug
-      window['products'] = this.products;
     }, err => {
       this.notificationService.error('Could Not Retrieve Products!', 'Please try again later.');
     });
