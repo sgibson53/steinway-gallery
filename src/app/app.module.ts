@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // 3rd Party Modules
 import { SimpleNotificationsModule } from 'angular2-notifications';
@@ -15,7 +16,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 // Angular Material
-import { MatButtonModule, MatCardModule, MatTableModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatTableModule, MatInputModule, MatFormFieldModule } from '@angular/material';
 
 // My Modules
 import { CoreModule } from './core/core.module';
@@ -35,6 +36,7 @@ import { ProductsService } from './shared/services/products.service';
 import { DeleteDialogComponent } from './shared/components/delete-dialog/delete-dialog.component';
 import { CatalogComponent } from './home/catalog/catalog.component';
 import { ShoppingCartService } from './shared/services/shopping-cart.service';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { ShoppingCartService } from './shared/services/shopping-cart.service';
     ShoppingCartComponent,
     LoginComponent,
     DeleteDialogComponent,
-    CatalogComponent
+    CatalogComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -54,8 +57,11 @@ import { ShoppingCartService } from './shared/services/shopping-cart.service';
     MatButtonModule,
     MatCardModule,
     MatTableModule,
+    MatInputModule,
+    MatFormFieldModule,
     AngularSvgIconModule,
     HttpClientModule,
+    FormsModule,
     AppRoutingModule
   ],
   entryComponents: [DeleteDialogComponent],
