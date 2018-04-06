@@ -20,7 +20,8 @@
           type="text"
           id="phone"
           name="phone"
-          (keyup)="parsePhoneNumber(phone.value)">
+          [value]="formattedNumber"
+          (keyup)="parsePhoneNumber(phoneInput.value, $event)">
       </mat-form-field>
     </form>
   </div>

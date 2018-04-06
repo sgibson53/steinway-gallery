@@ -11,7 +11,8 @@ import * as phone from 'libphonenumber-js';
 export class CheckoutComponent implements OnInit {
 
   public shippingInfo: ShippingInformation;
-  @ViewChild('phone') phoneInput;
+  public formattedNumber = '';
+  @ViewChild('phoneInput') phoneInput;
  
 
   constructor() { }
@@ -20,8 +21,11 @@ export class CheckoutComponent implements OnInit {
     this.shippingInfo = new ShippingInformation();
   }
 
-  public parseNumber(number) {
-    this.phoneInput.value = new phone.AsYouType('US').input(number);
+  public parsePhoneNumber(number, e) {
+    if (e.key !== 'Backspace') {
+      this.formattedNumber = new phone.AsYouType('US').input(number);
+      this.shippingInfo.phone = number;
+    }
   }
 
 }
