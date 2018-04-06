@@ -5,7 +5,7 @@ export class ShippingInformation {
   public city: string;
   public state: string;
   public zipcode: string;
-  public phone: string;
+  public phone: any;
 
   constructor() {}
 }

@@ -2,30 +2,72 @@
   <div class="shipping">
     <h1>Shipping</h1>
     <form (ngSubmit)="onSubmit()" #shippingForm="ngForm">
-      <mat-form-field>
+      <mat-form-field id="name">
         <input 
           matInput
           placeholder="Name"
           type="text"
-          id="name"
           name="name"
           #name="ngModel"
           [(ngModel)]="shippingInfo.name">
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field id="phone">
         <input 
           matInput
           #phoneInput
           placeholder="Phone"
           type="text"
-          id="phone"
+          
           name="phone"
           [value]="formattedNumber"
           (keyup)="parsePhoneNumber(phoneInput.value, $event)">
       </mat-form-field>
+      <mat-form-field id="address1">
+        <input 
+          matInput
+          placeholder="Address 1"
+          type="text"
+          
+          name="address1"
+          [(ngModel)]="shippingInfo.address1">
+      </mat-form-field>
+      <mat-form-field id="address2">
+        <input 
+          matInput
+          placeholder="Address2"
+          type="text"
+          
+          name="address2"
+          [(ngModel)]="shippingInfo.address2">
+      </mat-form-field>
+      <mat-form-field id="city">
+        <input 
+          matInput
+          placeholder="City"
+          type="text"
+          
+          name="city"
+          [(ngModel)]="shippingInfo.city">
+      </mat-form-field>
+      <mat-form-field id="state">
+        <mat-select placeholder="State" name="state" [(ngModel)]="shippingInfo.state">
+          <mat-option *ngFor="let state of states" [value]="state">
+            {{ state }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field id="zipcode">
+        <input 
+          matInput
+          placeholder="Zipcode"
+          type="text"
+          
+          name="zipcode"
+          [(ngModel)]="shippingInfo.zipcode">
+      </mat-form-field>
     </form>
+    {{diagnostic | json}}
   </div>
   <div class="order-summary">
-
   </div>
 </div>

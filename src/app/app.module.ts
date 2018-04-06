@@ -16,7 +16,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 // Angular Material
-import { MatButtonModule, MatCardModule, MatTableModule, MatInputModule, MatFormFieldModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatTableModule, MatInputModule, MatFormFieldModule, MatSelectModule } from '@angular/material';
 
 // My Modules
 import { CoreModule } from './core/core.module';
@@ -59,6 +59,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     MatTableModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSelectModule,
     AngularSvgIconModule,
     HttpClientModule,
     FormsModule,

@@ -2,4 +2,37 @@
   width: 100%;
   max-width: 1200px;
   margin: auto;
+
+  .shipping {
+    width: 500px;
+    mat-form-field {
+      display: block;
+    }
+
+    #name {
+      width: 200px;
+    }
+
+    #phone {
+      width: 200px;
+    }
+
+    #city {
+      width: 200px;
+      display: inline-block;
+    }
+
+    #state {
+      width: 60px;
+      display: inline-block;
+      margin: 5px;
+    }
+
+    #zipcode {
+      width: 80px;
+      display: inline-block;
+    }
+  }
+
+  
 }
