@@ -1,20 +1,32 @@
 .page-wrapper {
   width: 100%;
   max-width: 1200px;
+  padding: 20px 0;
   margin: auto;
+  display: flex;
+  justify-content: space-around;
+
+  #title {
+    font-size: 2em;
+  }
 
   .shipping {
     width: 500px;
+
+    form {
+      margin: 30px 0;
+    }
+
     mat-form-field {
       display: block;
     }
 
     #name {
-      width: 200px;
+      width: 250px;
     }
 
     #phone {
-      width: 200px;
+      width: 130px;
     }
 
     #city {

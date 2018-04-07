@@ -16,10 +16,6 @@ export class CheckoutComponent implements OnInit {
   public states;
   @ViewChild('phoneInput') phoneInput;
 
-  get diagnostic() {
-    return this.shippingInfo;
-  }
-
   constructor() { }
 
   ngOnInit() {

@@ -1,3 +1,4 @@
+<h2 id="title">Cart Summary</h2>
 <div class="checkout-table-wrapper mat-elevation-z8">
   <mat-table #checkoutTable [dataSource]="dataSource">
     <!-- Product -->
@@ -11,12 +12,13 @@
     <!-- Price -->
     <ng-container matColumnDef="price">
         <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.product.price * element.quantity | currency:'USD'}}</mat-cell>
+        <mat-cell id="quantity" *matCellDef="let element">{{element.product.price * element.quantity | currency:'USD'}}</mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
   <div class="last-row">
+    <span>Total:</span>
     <div id="total-price">{{totalPrice | currency:'USD'}}</div>
   </div>
 </div>

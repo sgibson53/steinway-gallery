@@ -1,6 +1,6 @@
 <div class="page-wrapper">
   <div class="shipping">
-    <h1>Shipping</h1>
+    <h1 id="title">Shipping</h1>
     <form (ngSubmit)="onSubmit()" #shippingForm="ngForm">
       <mat-form-field id="name">
         <input 
@@ -17,7 +17,6 @@
           #phoneInput
           placeholder="Phone"
           type="text"
-          
           name="phone"
           [value]="formattedNumber"
           (keyup)="parsePhoneNumber(phoneInput.value, $event)">
@@ -27,7 +26,7 @@
           matInput
           placeholder="Address 1"
           type="text"
-          
+          #address1="ngModel"
           name="address1"
           [(ngModel)]="shippingInfo.address1">
       </mat-form-field>
@@ -36,7 +35,7 @@
           matInput
           placeholder="Address2"
           type="text"
-          
+          #address2="ngModel"
           name="address2"
           [(ngModel)]="shippingInfo.address2">
       </mat-form-field>
@@ -45,12 +44,12 @@
           matInput
           placeholder="City"
           type="text"
-          
+          #city="ngModel"
           name="city"
           [(ngModel)]="shippingInfo.city">
       </mat-form-field>
       <mat-form-field id="state">
-        <mat-select placeholder="State" name="state" [(ngModel)]="shippingInfo.state">
+        <mat-select placeholder="State" #state="ngModel" name="state" [(ngModel)]="shippingInfo.state">
           <mat-option *ngFor="let state of states" [value]="state">
             {{ state }}
           </mat-option>
@@ -61,12 +60,12 @@
           matInput
           placeholder="Zipcode"
           type="text"
-          
           name="zipcode"
+          #zipcode="ngModel"
           [(ngModel)]="shippingInfo.zipcode">
       </mat-form-field>
     </form>
-    {{diagnostic | json}}
+    <button [routerLink]="['/checkout']" [disabled]="!(name.dirty && shippingInfo.phone && address1.dirty && address2.dirty && city.dirty && state.dirty && zipcode.dirty)" mat-raised-button color="primary">Place Order</button>
   </div>
   <app-checkout-summary>
 
