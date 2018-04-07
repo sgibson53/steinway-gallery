@@ -37,6 +37,7 @@ import { DeleteDialogComponent } from './shared/components/delete-dialog/delete-
 import { CatalogComponent } from './home/catalog/catalog.component';
 import { ShoppingCartService } from './shared/services/shopping-cart.service';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { CheckoutSummaryComponent } from './checkout/checkout-summary/checkout-summary.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     LoginComponent,
     DeleteDialogComponent,
     CatalogComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    CheckoutSummaryComponent
   ],
   imports: [
     BrowserModule,

@@ -20,9 +20,10 @@ export class AppComponent {
 
   constructor(private auth: AuthService, private router: Router, private userService: UserService) {
     auth.user$.subscribe(user => {
-      if (user) {
+      const returnUrl = localStorage.getItem('returnUrl');
+      if (user && returnUrl) {
+        localStorage.removeItem('returnUrl');
         userService.save(user);
-        const returnUrl = localStorage.getItem('returnUrl');
         router.navigateByUrl(returnUrl);
       }
     });

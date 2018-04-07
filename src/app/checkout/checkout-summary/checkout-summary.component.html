@@ -1,0 +1,22 @@
+<div class="checkout-table-wrapper mat-elevation-z8">
+  <mat-table #checkoutTable [dataSource]="dataSource">
+    <!-- Product -->
+    <ng-container matColumnDef="product">
+      <mat-header-cell *matHeaderCellDef>Product</mat-header-cell>
+        <mat-cell id="product-description" *matCellDef="let element">
+          {{element.quantity}} X <span id="product-label">{{element.product.label}}</span>
+        </mat-cell>
+    </ng-container>
+
+    <!-- Price -->
+    <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.product.price * element.quantity | currency:'USD'}}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <div class="last-row">
+    <div id="total-price">{{totalPrice | currency:'USD'}}</div>
+  </div>
+</div>

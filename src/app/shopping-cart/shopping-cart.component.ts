@@ -21,6 +21,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   constructor(private shoppingCartService: ShoppingCartService) { }
 
   ngOnInit() {
+    // TODO: Are these calls redundant?
     this.shoppingCartService.getCartItems().then(items$ => {
       items$.takeUntil(componentDestroyed(this)).subscribe(
         (items: CartItem[]) => this.dataSource = new MatTableDataSource(items));
