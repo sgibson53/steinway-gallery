@@ -64,8 +64,8 @@
           #zipcode="ngModel"
           [(ngModel)]="shippingInfo.zipcode">
       </mat-form-field>
+      <button type="submit" [disabled]="!(name.dirty && shippingInfo.phone && address1.dirty && address2.dirty && city.dirty && state.dirty && zipcode.dirty)" mat-raised-button color="primary">Place Order</button>
     </form>
-    <button [routerLink]="['/checkout']" [disabled]="!(name.dirty && shippingInfo.phone && address1.dirty && address2.dirty && city.dirty && state.dirty && zipcode.dirty)" mat-raised-button color="primary">Place Order</button>
   </div>
   <app-checkout-summary>
 

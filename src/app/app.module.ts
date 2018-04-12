@@ -38,6 +38,7 @@ import { CatalogComponent } from './home/catalog/catalog.component';
 import { ShoppingCartService } from './shared/services/shopping-cart.service';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CheckoutSummaryComponent } from './checkout/checkout-summary/checkout-summary.component';
+import { OrderSuccessComponent } from './order-success/order-success.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { CheckoutSummaryComponent } from './checkout/checkout-summary/checkout-s
     DeleteDialogComponent,
     CatalogComponent,
     CheckoutComponent,
-    CheckoutSummaryComponent
+    CheckoutSummaryComponent,
+    OrderSuccessComponent
   ],
   imports: [
     BrowserModule,

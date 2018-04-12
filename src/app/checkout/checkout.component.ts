@@ -3,6 +3,8 @@ import { ShippingInformation } from '../shared/models/shipping-information.model
 import { STATES } from '../shared/models/states';
 
 import * as phone from 'libphonenumber-js';
+import { ShoppingCartService } from '../shared/services/shopping-cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -16,7 +18,7 @@ export class CheckoutComponent implements OnInit {
   public states;
   @ViewChild('phoneInput') phoneInput;
 
-  constructor() { }
+  constructor(private shoppingCartService: ShoppingCartService, private router: Router) { }
 
   ngOnInit() {
     this.shippingInfo = new ShippingInformation();
@@ -32,7 +34,8 @@ export class CheckoutComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.shippingInfo);
+    this.shoppingCartService.emptyShoppintCart();
+    this.router.navigate(['/success']);
   }
 
 }
