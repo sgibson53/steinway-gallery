@@ -22,15 +22,16 @@
     }
 
     mat-card-footer {
-      font-size: 1.2em;
-      width: 150px;
-      height: 40px;
-      line-height: 40px;
-      border-radius: 10px;
-      margin: auto;
-      text-align: center;
-      background: rgb(204, 225, 233);
       cursor: pointer;
+
+      .mat-button {
+        width: 100%;
+        color: white;
+        height: 40px;
+        border-top: 1px solid #e2e2e2;
+        background: #cde1e9;
+        font-size: 1.3em;
+      }
     }
   }
 }

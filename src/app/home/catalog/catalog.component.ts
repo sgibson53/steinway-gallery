@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Product } from '../../shared/models/product.model';
 import { ShoppingCartService } from '../../shared/services/shopping-cart.service';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-catalog',
@@ -13,7 +14,7 @@ export class CatalogComponent implements OnChanges {
   @Input() filter: string;
   public filteredProducts = [];
 
-  constructor(private shoppingCartService: ShoppingCartService) { }
+  constructor(private shoppingCartService: ShoppingCartService, private notificationService: NotificationsService) { }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.products && changes.products.currentValue) {
@@ -33,7 +34,15 @@ export class CatalogComponent implements OnChanges {
   }
 
   public addToCart(product: Product) {
-    this.shoppingCartService.addToCart(product);
+    this.shoppingCartService.addToCart(product).then(
+      success => {
+        this.notificationService.success('Success!', 'Product added to cart');
+      },
+      error => {
+        this.notificationService.error('Oops!', 'Could not add to cart. Sorry.');
+      }
+    );
+
   }
 
 }
