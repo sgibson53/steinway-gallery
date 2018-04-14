@@ -3,6 +3,7 @@ import { ProductOrder } from './product-order.model';
 
 export interface Order {
     shippingInfo: ShippingInformation;
-    products: <ProductOrder>[];
+    products: ProductOrder[];
     totalPrice: number;
+    timestamp: Date;
 }

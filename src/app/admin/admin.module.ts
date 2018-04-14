@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ManageProductsComponent } from './manage-products/manage-products.component';
 import {
   MatButtonModule,
   MatFormFieldModule,
@@ -13,8 +13,10 @@ import {
 } from '@angular/material';
 import { NewProductFormComponent } from './new-product-form/new-product-form.component';
 import { FormsModule } from '@angular/forms';
-import { ProductsListComponent } from './admin-dashboard/products-list/products-list.component';
+import { ProductsListComponent } from './manage-products/products-list/products-list.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
+import { OrdersListComponent } from './manage-orders/orders-list/orders-list.component';
 
 @NgModule({
   imports: [
@@ -29,6 +31,12 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     FormsModule,
     AdminRoutingModule
   ],
-  declarations: [AdminDashboardComponent, NewProductFormComponent, ProductsListComponent, EditProductComponent]
+  declarations: [
+    ManageProductsComponent,
+    NewProductFormComponent,
+    ProductsListComponent,
+    EditProductComponent,
+    ManageOrdersComponent,
+    OrdersListComponent]
 })
 export class AdminModule { }
