@@ -22,6 +22,14 @@
     }
 
     mat-card-footer {
+      font-size: 1.2em;
+      width: 150px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 10px;
+      margin: auto;
+      text-align: center;
+      background: rgb(204, 225, 233);
       cursor: pointer;
 
       .mat-button {

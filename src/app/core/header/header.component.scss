@@ -1,5 +1,8 @@
 header {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
 
     .header-item {
         display: block;

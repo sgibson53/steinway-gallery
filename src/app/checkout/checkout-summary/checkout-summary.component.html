@@ -5,7 +5,7 @@
     <ng-container matColumnDef="product">
       <mat-header-cell *matHeaderCellDef>Product</mat-header-cell>
         <mat-cell id="product-description" *matCellDef="let element">
-          {{element.quantity}} X <span id="product-label">{{element.product.label}}</span>
+          {{element.quantity}} x <span id="product-label">{{element.product.label}}</span>
         </mat-cell>
     </ng-container>
 
@@ -18,7 +18,7 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
   <div class="last-row">
-    <span>Total:</span>
+    <span>Order Total:</span>
     <div id="total-price">{{totalPrice | currency:'USD'}}</div>
   </div>
 </div>
