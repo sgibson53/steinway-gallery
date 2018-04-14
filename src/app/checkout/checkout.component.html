@@ -67,7 +67,5 @@
       <button type="submit" [disabled]="!(name.dirty && shippingInfo.phone && address1.dirty && address2.dirty && city.dirty && state.dirty && zipcode.dirty)" mat-raised-button color="primary">Place Order</button>
     </form>
   </div>
-  <app-checkout-summary>
-
-  </app-checkout-summary>
+  <app-checkout-summary *ngIf="tableData && totalPrice" [dataSource]="tableData" [totalPrice]="totalPrice"></app-checkout-summary>
 </div>

@@ -39,6 +39,7 @@ import { ShoppingCartService } from './shared/services/shopping-cart.service';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CheckoutSummaryComponent } from './checkout/checkout-summary/checkout-summary.component';
 import { OrderSuccessComponent } from './order-success/order-success.component';
+import { OrdersService } from './shared/services/orders.service';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
     UserService,
     AdminAuthGuard,
     ProductsService,
-    ShoppingCartService
+    ShoppingCartService,
+    OrdersService
   ],
   bootstrap: [AppComponent]
 })
