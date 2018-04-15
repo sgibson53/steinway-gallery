@@ -5,5 +5,5 @@ export interface Order {
     shippingInfo: ShippingInformation;
     products: CartItem[];
     totalPrice: number;
-    timestamp: any;
+    createdAt: any;
 }
