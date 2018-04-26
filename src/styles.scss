@@ -1,6 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import "reset.scss";
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import "~@angular/material/_theming";
+@include mat-core();
+$steinway-primary: mat-palette($mat-light-blue, 800);
+$steinway-accent: mat-palette($mat-deep-purple, 50);
+$steinway-warn: mat-palette($mat-red);
+
+$steinway-theme: mat-light-theme($steinway-primary, $steinway-accent, $steinway-warn);
+@include angular-material-theme($steinway-theme);
+
+$steinway-typography: mat-typography-config(
+    $font-family: '"Oxygen", sans-serif'
+);
+@include angular-material-typography($steinway-typography)
 
 .cdk-overlay-pane {
     top: 30px !important; 

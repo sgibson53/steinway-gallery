@@ -17,9 +17,9 @@
       <ng-container matColumnDef="quantity">
           <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
           <mat-cell id="quantity" *matCellDef="let element">
-            <button (click)="decreaseQuantity(element.product)" mat-raised-button color="primary">-</button>
+            <button (click)="decreaseQuantity(element.product)" mat-raised-button color="accent">-</button>
             {{element.quantity}} in cart
-            <button (click)="increaseQuantity(element.product)" mat-raised-button color="primary">+</button>
+            <button (click)="increaseQuantity(element.product)" mat-raised-button color="accent">+</button>
           </mat-cell>
       </ng-container>
 
