@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MatModule } from './mat.module';
 
 // 3rd Party Modules
 import { SimpleNotificationsModule } from 'angular2-notifications';
@@ -14,9 +15,6 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-
-// Angular Material
-import { MatButtonModule, MatCardModule, MatTableModule, MatInputModule, MatFormFieldModule, MatSelectModule } from '@angular/material';
 
 // My Modules
 import { CoreModule } from './core/core.module';
@@ -41,6 +39,7 @@ import { CheckoutSummaryComponent } from './checkout/checkout-summary/checkout-s
 import { OrderSuccessComponent } from './order-success/order-success.component';
 import { OrdersService } from './shared/services/orders.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,15 +55,10 @@ import { OrdersService } from './shared/services/orders.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatModule,
     AngularFireModule.initializeApp(environment.firebase),
     SimpleNotificationsModule.forRoot(),
     CoreModule,
-    MatButtonModule,
-    MatCardModule,
-    MatTableModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
     AngularSvgIconModule,
     HttpClientModule,
     FormsModule,
